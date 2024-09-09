@@ -37,13 +37,20 @@
 
     function getCategorie($objFKCatId){
         $dbh = dbConnect();
-        $query = "SELECT Cat_nom FROM Categories
+        $query = "SELECT Cat_nom, icon FROM Categories
         WHERE Cat_Id = $objFKCatId";
         $stmt = $dbh->query($query);
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         return $result;
     }
 
+    function getAllCategories(){
+        $dbh = dbConnect();
+        $query = "SELECT Cat_nom, Cat_Id, icon FROM Categories";
+        $stmt = $dbh->query($query);
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
 
 /*     function getProfile($userId){
         $dbh = dbConnect();

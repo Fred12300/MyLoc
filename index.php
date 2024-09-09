@@ -1,4 +1,5 @@
 <?php require('./functions.php');
+$categories = getAllCategories();
 ?>
 
 <!DOCTYPE html>
@@ -19,6 +20,14 @@
             </ul>
         </nav>
     </header>
+    <div class="filter">
+        <div class="filterBtn">All<img class="icon" src="./images/search.png" alt=""></div>
+        <?php foreach($categories as $categorie){?>
+            <div class="filterBtn"><?php echo $categorie['Cat_nom'] ?> <img class="icon" src="<?php echo $categorie['icon']?>" alt=""></div>
+        <?php
+        }
+        ?>
+    </div>
     <main class="objects">
         <?php $Objects = getAllObjects();
         foreach($Objects as $objet){
@@ -29,14 +38,14 @@
             <div class="objCard">
                 <div class="objHeader">
                     <div class="objTitle">
-                        <h2><?php echo $objet['obj_nom']?></h2>
-                        <h6 id=<?php echo $owner['id']?>>Propriétaire: <?php
+                        <h2 class="title"><?php echo $objet['obj_nom']?></h2>
+                        <h6 class="title" id=<?php echo $owner['id']?>>Propriétaire: <?php
                             echo $owner['prenom'];
                             echo ' ';
                             echo $owner['nom'] ?>
                         </h6>
                     </div>
-                    <div class="objCat">cat. : <?php echo $cat['Cat_nom'] ?></div>
+                    <div class="objCat"><?php echo $cat['Cat_nom'] ?> <img class="icons" src="<?php echo $cat['icon']?>" alt=""></div>
                 </div>
                 <div class="cardContent">
                     <?php $image = $objet["obj_image"];?>
@@ -46,13 +55,13 @@
                         <div class="dispo">
                             <?php if (!empty($bookings)) {
                                 foreach ($bookings as $booking) { ?>
-                                    <p>Réservé du : <?php echo $booking['date_debut']; ?></p>
-                                    <p>Au : <?php echo $booking['date_fin']; ?></p>
+                                    <p class="title">Réservé du : <?php echo $booking['date_debut']; ?></p>
+                                    <p class="title">Au : <?php echo $booking['date_fin']; ?></p>
                                 <?php }
                                 } else { ?>
-                                    <p>Aucune réservation actuellement.</p>
+                                    <p class="title">Aucune réservation actuellement.</p>
                                     <?php } ?>
-                                    <button class="btn">Réserver</button>
+                                    <button class="btn title">Réserver</button>
                         </div>
                     </div>
                 </div>
