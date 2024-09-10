@@ -2,7 +2,7 @@
 
     function dbConnect() {
         try {
-            $dbh = new PDO('mysql:host=localhost;dbname=myloc', 'root', '');
+            $dbh = new PDO('mysql:host=localhost;dbname=myloc', 'root', 'root');
             return $dbh;
         }catch(PDOException $e){
             echo 'ça marche pas' . $e;
@@ -87,6 +87,15 @@
         WHERE FK_Cat_Id = $catId";
         $stmt = $dbh->query($query);
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    function getUser($userId) {
+        $dbh = dbConnect();
+        $query= "SELECT * FROM Users
+        WHERE Users.id = $userId";
+        $stmt = $dbh->query($query);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
         return $result;
     }
 ?>

@@ -25,7 +25,7 @@
         --bg-2: rgb(99, 168, 196);
         --bg-3: rgb(202, 155, 93);
         --bg-4: rgb(170, 114, 40);
-        --btn-1: rgb(134, 214, 214);
+        --btn-1: rgb(81, 183, 183);
         --btn-2: rgb(75, 201, 109);
         --text-1: rgb(250, 250, 250);
         --text-2: white;
@@ -91,6 +91,9 @@ a {
 
 .title {
     font-family: var(--title-font);
+    display: flex;
+    align-items: center;
+    gap: 1em;
 }
 
 .objects {
@@ -239,8 +242,10 @@ hr {
     width: 2em;
 }
 
-.userCard {
+.userCard2 {
     width: 20em;
+    background-color: var(--color-1);
+    padding: 0.5em;
 }
 
 .objetPossede {
@@ -284,4 +289,27 @@ hr {
     width: 70%;
     height: 10em;
     background-color: azure;
+}
+
+.userCard {
+    background: linear-gradient(var(--bg-1), var(--bg-2));
+    margin: 2em;
+}
+
+.mini2 {
+    background-color: var(--color-2);
+    width: 1.5em;
+    padding: 0.1em;
+}
+
+.top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+.topL {
+    display: flex;
+    flex-direction: column;
 }

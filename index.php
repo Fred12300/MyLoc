@@ -30,11 +30,14 @@ $catSelected = isset($_GET['catSelected']) ? $_GET['catSelected'] : "All";
                 <div class="objHeader">
                     <div class="objTitle">
                         <h2 class="title"><?php echo $objet['obj_nom']?></h2>
-                        <h6 class="title" id=<?php echo $owner['id']?>>Propriétaire: <?php
-                            echo $owner['prenom'];
-                            echo ' ';
-                            echo $owner['nom'] ?>
-                        </h6>
+                        <a href="userDetails.php?userSelected=<?php echo $owner['id'] ?>">
+                            <h5 class="title" id=<?php echo $owner['id']?>>Propriétaire: <?php
+                                echo $owner['prenom'];
+                                echo ' ';
+                                echo $owner['nom'] ?>
+                            <img class="mini2" src="./images/loupe.png" alt="">
+                            </h5>
+                        </a>
                     </div>
                     <div class="objCat"><?php echo $cat['Cat_nom'] ?> <img class="icons" src="<?php echo $cat['icon']?>" alt=""></div>
                 </div>

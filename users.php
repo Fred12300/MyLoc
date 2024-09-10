@@ -6,11 +6,12 @@ $users = getAllUsers();
         <?php foreach($users as $user){
             $objetsPossedes = getOwnedObjects($user['id'])
             ?>
-            <div class="userCard">
-                <div class="user">
+            <div class="userCard2">
+                <a class="user" href="userDetails.php?userSelected=<?php echo $user['id'] ?>">
                     <h2><?php echo $user['prenom']?></h2>
                     <h2><?php echo $user['nom']?></h2>
-                </div>
+                    <img src="./images/loupe.png" alt="" class="mini">
+                </a>
                 <div class="objetsPossedes">
                     <?php foreach($objetsPossedes as $objetPossede){
                     $cat = getCategorie($objetPossede['FK_Cat_Id'])
