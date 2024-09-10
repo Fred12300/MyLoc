@@ -10,7 +10,9 @@
 </head>
 <body>
     <header class="header">
-        <h1 class="brand">MyLoc</h1>
+        <a href="index.php">
+            <h1 class="brand">MyLoc</h1>
+        </a>
         <nav class="nav">
             <ul class="links">
                 <a class="link" href="./index.php">Objets</a>
