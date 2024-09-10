@@ -4,6 +4,7 @@
     --bg-1: rgb(146, 180, 201);
     --bg-2: rgb(219, 232, 233);
     --bg-3: antiquewhite;
+    --bg-4: rgb(214, 160, 90);
     --btn-1: rgb(190, 234, 219);
     --btn-2: rgb(130, 237, 158);
     --text-1: black;
@@ -12,6 +13,8 @@
     --gen-bg-2: rgb(202, 230, 245);
     --shadow : rgba(0, 0, 0, 0.67);
     --title-font: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    --red-1: rgb(170, 18, 18);
+    --red-2: red;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,13 +22,14 @@
         --color-1: rgb(36, 92, 134);
         --color-2: rgb(115, 180, 230);
         --bg-1: rgb(70, 131, 169);
-        --bg-2: rgb(90, 169, 174);
+        --bg-2: rgb(99, 168, 196);
         --bg-3: rgb(202, 155, 93);
-        --btn-1: rgb(134, 214, 187);
+        --bg-4: rgb(170, 114, 40);
+        --btn-1: rgb(134, 214, 214);
         --btn-2: rgb(75, 201, 109);
         --text-1: rgb(250, 250, 250);
         --text-2: white;
-        --gen-bg-1: rgb(0, 0, 0);
+        --gen-bg-1: rgb(48, 47, 56);
         --gen-bg-2: rgb(202, 230, 245);
     }
 
@@ -43,15 +47,18 @@ body {
     color: var(--text-1);
 }
 
-a, .links {
+a {
     text-decoration: none;
-    color: var(--text-1);
     cursor: pointer;
+    color: var(--text-1)
 }
 
-a:hover {
+.links, link {
+    color: var(--text-1);
+}
+
+.link:hover {
     color: var(--btn-2);
-    font-weight: 800;
 }
 
 .header {
@@ -169,7 +176,6 @@ hr {
 }
 
 .btn:hover {
-    font-weight: 600;
     background-color: var(--btn-2);
 }
 
@@ -177,12 +183,14 @@ hr {
     display: flex;
     flex-wrap: wrap;
     gap: 1.5em;
+    padding: 2em;
 }
 
 .user {
     display: flex;
     gap: 1em;
     background-color: var(--bg-3);
+    padding: 0.5em;
 }
 
 .filter {
@@ -197,6 +205,7 @@ hr {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 0.6em;
 }
 
 
@@ -213,11 +222,66 @@ hr {
     transition: transform 1s;
 }
 
+.mini {
+    background-color: var(--bg-3);
+    width: 1.5em;
+    padding: 0.1em;
+    transform: rotate(0);
+    transition: transform 1s;
+}
+
 .icon:hover {
     background-color: var(--bg-2);
-    transform: rotate(30deg);
+    transform: rotate(45deg);
 }
 
 .icons {
     width: 2em;
+}
+
+.userCard {
+    width: 20em;
+}
+
+.objetPossede {
+    background-color: var(--bg-2);
+    width: 100%;
+    margin: 1em 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5em;
+}
+
+.pop {
+    background: linear-gradient(var(--bg-3), var(--bg-4));
+    position: absolute;
+    border-color: grey;
+}
+
+.booking {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+.red {
+    background-color: var(--red-1);
+}
+
+.red:hover {
+    background-color: var(--red-2);
+}
+
+.resaBottom {
+    display: flex;
+    justify-content: space-around;
+    padding: 2em 0;
+    width: 100%;
+}
+
+.calendrier {
+    width: 70%;
+    height: 10em;
+    background-color: azure;
 }

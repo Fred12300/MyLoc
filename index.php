@@ -1,41 +1,32 @@
-<?php require('./functions.php');
+<?php require('partials/header.php');
 $categories = getAllCategories();
+$catSelected = isset($_GET['catSelected']) ? $_GET['catSelected'] : "All";
 ?>
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <title>MyLoc</title>
-</head>
-<body>
-    <header class="header">
-        <h1 class="brand">MyLoc</h1>
-        <nav class="nav">
-            <ul class="links">
-                <a>Objets</a>
-                <a href="./users.php">Utilisateurs</a>
-            </ul>
-        </nav>
-    </header>
     <div class="filter">
-        <div class="filterBtn">All<img class="icon" src="./images/search.png" alt=""></div>
+        <a href="index.php?catSelected=All" class="filterBtn link">All<img class="icon" src="./images/search.png" alt=""></a>
         <?php foreach($categories as $categorie){?>
-            <div class="filterBtn"><?php echo $categorie['Cat_nom'] ?> <img class="icon" src="<?php echo $categorie['icon']?>" alt=""></div>
+            <a href="index.php?catSelected=<?php echo $categorie['Cat_Id']; ?>" class="filterBtn link"><?php echo $categorie['Cat_nom'] ?> <img class="icon" src="<?php echo $categorie['icon']?>" alt=""></a>
         <?php
         }
         ?>
     </div>
     <main class="objects">
-        <?php $Objects = getAllObjects();
+        <?php $Objects = getACategorie($catSelected);
         foreach($Objects as $objet){
             $owner = getOwner($objet['FK_User_Id']);
             $bookings = getBookings($objet['object_id']);
             $cat = getCategorie($objet['FK_Cat_Id'])
             ?>
             <div class="objCard">
+                <!-- <section class="objCard pop booking">
+                    <h2>Réservation</h2>
+                    <div class="calendrier">calendrier</div>
+                    <div class="resaBottom">
+                        <button class="btn">Valider</button>
+                        <button class="btn red">Annuler</button>
+                    </div>
+                </section> -->
                 <div class="objHeader">
                     <div class="objTitle">
                         <h2 class="title"><?php echo $objet['obj_nom']?></h2>
@@ -61,7 +52,7 @@ $categories = getAllCategories();
                                 } else { ?>
                                     <p class="title">Aucune réservation actuellement.</p>
                                     <?php } ?>
-                                    <button class="btn title">Réserver</button>
+                                    <a class="btn title">Réserver</a>
                         </div>
                     </div>
                 </div>
@@ -69,6 +60,8 @@ $categories = getAllCategories();
         <?php
         }
         ?>
+        
+
+
     </main>
-</body>
-</html>
+    <?php require 'partials/footer.php' ?>

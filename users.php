@@ -1,25 +1,7 @@
-<?php require('./functions.php');
+<?php require('partials/header.php');
 $users = getAllUsers();
 ?>
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <title>MyLoc</title>
-</head>
-<body>
-    <header class="header">
-        <h1 class="brand">MyLoc</h1>
-        <nav class="nav">
-            <ul class="links">
-                <a href="./index.php">Objets</a>
-                <a>Utilisateurs</a>
-            </ul>
-        </nav>
-    </header>
     <main class="users">
         <?php foreach($users as $user){
             $objetsPossedes = getOwnedObjects($user['id'])
@@ -30,9 +12,12 @@ $users = getAllUsers();
                     <h2><?php echo $user['nom']?></h2>
                 </div>
                 <div class="objetsPossedes">
-                    <?php foreach($objetsPossedes as $objetPossede){?>
+                    <?php foreach($objetsPossedes as $objetPossede){
+                    $cat = getCategorie($objetPossede['FK_Cat_Id'])
+                    ?>
                     <div class="objetPossede">
                         <div><?php echo $objetPossede['obj_nom'] ?></div>
+                        <img class="mini" src="<?php echo $cat['icon']?>" alt="">
                     </div>
                     
                     <?php
