@@ -18,7 +18,7 @@ $objets = getAllObjects();
             <h3>Objets existants</h3>
             <?php foreach($objets as $objet){?>
                 <div class="objet">
-                    <h4><?php echo $objet['obj_nom']?></h4><a href="new.php?action=delete&target=<?php echo $objet['object_id'] ?>"><img class="mini" src="./images/supprimer.png" alt=""></a>
+                    <h4><?php echo $objet['obj_nom']?></h4><div onclick="checkIf(<?php echo $objet['object_id']; ?>, '<?php echo $objet['obj_nom']; ?>')"><img class="mini" src="./images/supprimer.png" alt=""></div>
                 </div>
             <?php
             }
@@ -56,5 +56,4 @@ $objets = getAllObjects();
             </fieldset>
         </div>
     </main>
-</body>
-</html>
+<?php require('partials/footer.php'); ?>

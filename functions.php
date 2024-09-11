@@ -2,7 +2,7 @@
 
     function dbConnect() {
         try {
-            $dbh = new PDO('mysql:host=localhost;dbname=myloc', 'root', '');
+            $dbh = new PDO('mysql:host=localhost;dbname=myloc', 'root', 'root');
             return $dbh;
         }catch(PDOException $e){
             echo 'ça marche pas' . $e;

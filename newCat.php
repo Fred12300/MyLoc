@@ -22,7 +22,7 @@ $categories = getAllCategories();
                         <div><?php echo $categorie['icon'] ?></div>
                         <img class="icons" src="<?php echo $categorie['icon']?>" alt="">
                     <div class="editBtns">
-                        <a href="newCat.php?action=delete&target=<?php echo $categorie['Cat_Id'] ?>"><img class="mini" src="./images/supprimer.png" alt=""></a>
+                    <div onclick="checkIf(<?php echo $categorie['Cat_Id']; ?>, '<?php echo $categorie['Cat_nom']; ?>')"><img class="mini" src="./images/supprimer.png" alt=""></div>
                         <a href="newCat.php?action=edit&target=<?php echo $categorie['Cat_Id'] ?>"><img class="mini" src="./images/editer.png" alt=""></a>
                     </div>
                 </div>
