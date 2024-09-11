@@ -72,11 +72,11 @@ a {
 }
 
 .nav {
-    min-width: 50%;
+    min-width: 60%;
 }
 
 .links {
-    width: 50%;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -265,7 +265,7 @@ hr {
 }
 
 .booking {
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
 }
@@ -294,6 +294,8 @@ hr {
 .userCard {
     background: linear-gradient(var(--bg-1), var(--bg-2));
     margin: 2em;
+    max-width: 50em;
+    width: 100%;
 }
 
 .mini2 {
@@ -312,4 +314,91 @@ hr {
 .topL {
     display: flex;
     flex-direction: column;
+}
+
+#newObjField {
+    width: 100%;
+    max-width: 50em;
+    border-radius: 8px;
+}
+
+#newObjField form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 2em;
+}
+
+#objName, #objImg, #categories {
+    height: 2em;
+    margin-bottom: 1em;
+}
+
+#objDesc {
+    height: 10em;
+    margin-bottom: 1em;
+}
+
+.center {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    padding-top: 2em;
+}
+
+#newObjField label {
+    font-weight: 800;
+}
+
+.editCat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+.catSpec {
+    display: flex;
+    gap: 1em;
+    border-bottom: solid 1px var(--color-1);
+    background-color: var(--bg-2);
+    width: 30em;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em 2em;
+}
+
+.editCatTop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5em;
+}
+
+.editBtns {
+    display: flex;
+    margin-left: 2em;
+    gap: 1em;
+}
+
+.split {
+    width: 100%;
+    display: flex;
+    padding: 2em;
+}
+
+.toLeft {
+    align-items: flex-start;
+    width: 100%;
+}
+
+.objet {
+    margin: 0.5em 0;
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    background-color: var(--bg-2);
 }

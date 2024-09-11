@@ -17,7 +17,8 @@
             <ul class="links">
                 <a class="link" href="./index.php">Objets</a>
                 <a class="link" href="./users.php">Utilisateurs</a>
-                <a class="link" href="./new.php">Ajouter un Objet</a>
+                <a class="link" href="./new.php">Gérer les Objets</a>
+                <a class="link" href="./newCat.php">Gérer les Catégories</a>
             </ul>
         </nav>
     </header>
