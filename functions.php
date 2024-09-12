@@ -2,7 +2,7 @@
 
     function dbConnect() {
         try {
-            $dbh = new PDO('mysql:host=localhost;dbname=myloc', 'root', 'root');
+            $dbh = new PDO('mysql:host=localhost;dbname=myloc', 'root', '');
             return $dbh;
         }catch(PDOException $e){
             echo 'ça marche pas' . $e;
@@ -155,5 +155,16 @@
         $stmt->bindParam(':objId', $obj_id);
         $stmt->execute();
     }
+
+function isUser($email){
+    $dbh = dbConnect();
+    $query= "SELECT * FROM users
+    WHERE email = :email";
+    $stmt = $dbh->prepare($query);
+    $stmt->bindParam(':email', $email);
+    $stmt->execute();
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $result;
+}
 
 ?>

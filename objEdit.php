@@ -1,4 +1,6 @@
-<?php require('partials/header.php');
+<?php
+require('partials/header.php');
+require('partials/adminLock.php');
 if(isset($_POST['owner'], $_POST['objName'], $_POST['objDesc'], $_POST['objImg'], $_POST['categorie']) && !empty($_POST['owner']) && !empty($_POST['objName']) && !empty($_POST['objDesc']) && !empty($_POST['objImg']) && !empty($_POST['categorie'])){
     createObjet($_POST['owner'], $_POST['objName'], $_POST['objDesc'], $_POST['objImg'], $_POST['categorie']);
 }

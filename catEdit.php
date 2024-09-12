@@ -1,4 +1,7 @@
-<?php require('partials/header.php');
+<?php
+
+require('partials/header.php');
+require('partials/adminLock.php');
 
 if (isset($_POST['nomCat'], $_POST['iconURL'], $_POST['points']) && !empty($_POST['nomCat']) && !empty($_POST['iconURL']) && !empty($_POST['points'])) {
     createCat($_POST['nomCat'], $_POST['iconURL'], $_POST['points']);
